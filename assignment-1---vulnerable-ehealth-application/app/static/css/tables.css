@@ -1,0 +1,26 @@
+h1{
+    width:100%;
+    max-width:1250px;
+    margin: 0 auto;
+}
+table{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    border: none;
+}
+
+table, td, th {
+    border: none !important;
+}
+
+td,th{
+    border: 1px solid white !important;
+    padding: 15px 0px !important;
+    background-color: #26c6da !important;
+    color: #fff;
+}
+
+th{
+    background-color: #18a2b4 !important;
+}

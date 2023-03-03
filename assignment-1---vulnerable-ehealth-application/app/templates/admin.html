@@ -1,0 +1,13 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<form action="/admin" method="POST">
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.username) | safe}}
+    {{ wtf.form_field(form.password) }}
+    {{ wtf.form_field(form.gender) }}
+    {{ wtf.form_field(form.full_name) | safe }}
+    {{ wtf.form_field(form.email) | safe}}
+    {{ wtf.form_field(form.admin) }}
+
+    <button type="submit">Finish</button>
+</form>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/tables.css')}}">
+
+<title>eHealth Corp - Send Ticket</title>
+{% endblock %}
+{% block body %}
+<h1 style="margin-top: 200px;">{{name}}' Appointments</h1>
+<table>
+    <tr>
+        <th>Speciality</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>doctor</th>
+    </tr>
+    {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment.speciality }}</td>
+        <td>{{ appointment.date }}</td>
+        <td>{{ appointment.time}}</td>
+        <td>{{ appointment.doctor }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

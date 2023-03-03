@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+<title>eHealth Corp - Dashboard</title>
+{% endblock %}
+{% block body %}
+<div class="top">
+    <div class="left"><h2>Welcome <span id="personal_title">teste</span> {{ name | safe}}</h2></div>
+    <script>
+        // checking the gender to get the 
+        var gender = '{{ gender}}' ;
+        if (gender == 'Male'){
+            document.getElementById('personal_title').innerText = 'Mr.';
+        } else if (gender == 'Female'){
+            document.getElementById('personal_title').innerText = 'Ms.';
+        }else{
+            document.getElementById('personal_title').innerText = '';
+        }
+    
+    </script>
+    
+    <div class="right"><h2><a href="{{ url_for('logout') }}">Log Out</a></h2></div>
+</div>
+<div class="actions-box">
+    <a href="{{ url_for('makeAppointment') }}">
+    <div class="item">
+        <img src="{{url_for('static', filename='img/img3.jpg')}}" alt="">
+        <p>Make an appointment</p>
+    </div>
+    </a>
+    <a href="{{ url_for('allAppointments') }}">
+    <div class="item">
+        <img src="{{url_for('static', filename='img/img2.jpg')}}" alt="">
+        <p>Appointment history</p>
+    </div>
+    </a>
+    <a href="{{url_for('exams')}}">
+    <div class="item">
+        <img src="{{url_for('static', filename='img/img1.jpg')}}" alt="">
+        <p>Consult exams</p>
+    </div>
+    </a>
+</div>
+{% endblock %}

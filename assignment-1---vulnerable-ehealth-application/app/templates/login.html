@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+<title>eHealth Corp - Login</title>
+
+{% endblock %}
+{% block body %}
+<div class="login-wrapper">
+    <div class="container">
+        <form class="form-signin" method="POST" action="/login">
+            <h2>Log in is required:</h2>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.username) |safe }}
+            {{ wtf.form_field(form.password)  |safe }}
+            <button type="submit">Log In</button>
+        </form>
+        <div class="right">
+            <h1>You must have an account to entry personal area</h1>
+            <a href="{{url_for('signup')}}">Sign Up</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

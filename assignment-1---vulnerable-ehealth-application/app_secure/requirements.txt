@@ -1,0 +1,8 @@
+flask
+flask_sqlalchemy 
+flask_wtf
+wtforms
+wtforms.validators
+flask_bootstrap
+flask_login
+email_validator

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<title>eHealth Corp - Main Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="index-wrapper">
+    <div class="contact-camp">
+        <a href="{{url_for('ticket')}}" class="ticket">Contact Us</a><br>
+        <!--<a href="{{url_for('ticket')}}" class="ticket">Check a Ticket</a>-->
+    </div>
+    <div class="services-camp">
+        <div class="services-left">
+            <div class="services-item">
+                <div class="services-title">Appointments</div>
+                <div class="services-icon"><i class="fa-sharp fa-solid fa-stethoscope"></i></div>
+                <a href="{{url_for('dashboard')}}">More <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="services-item">
+                <div class="services-title">Exams</div>
+                <div class="services-icon"><i class="fa-sharp fa-solid fa-notes-medical"></i></div>
+                <a href="{{url_for('exams')}}">More <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="services-item">
+                <div class="services-title">Doctors</div>
+                <div class="services-icon"><i class="fa-sharp fa-solid fa-user-doctor"></i></div>
+                <a href="{{url_for('doctors')}}">More <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="main-grid">
+        <div class="top">
+            <div class="left" style="background-image: url({{url_for('static', filename='img/index/1.jpg')}})">
+                <div class="title"><i class="fa-solid fa-stethoscope"></i> eHealth Corp 24</div>
+                <div class="desc">Urgent? contact us</div>
+                <button type="submit">More</button>
+            </div>
+            <div class="right" style="background-image: url({{url_for('static', filename='img/index/2.jpeg')}})">
+                <div class="title"><i class="fa-solid fa-stethoscope"></i> Lorem ipsum dolor sit amet.</div>
+                <div class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, cupiditate.</div>
+                <button type="submit">More</button>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="left" style="background-image: url({{url_for('static', filename='img/index/3.jpeg')}})">
+                <div class="title"><i class="fa-solid fa-stethoscope"></i> Lorem ipsum dolor sit amet.</div>
+                <div class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, cupiditate.</div>
+                <button type="submit">More</button>
+            </div>
+            <div class="right" style="background-image: url({{url_for('static', filename='img/index/4.jpg')}})">
+                <div class="title"><i class="fa-solid fa-stethoscope"></i> Lorem ipsum dolor sit amet.</div>
+                <div class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, cupiditate.</div>
+                <button type="submit">More</button>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="item" style="background-image: url({{url_for('static', filename='img/index/1.jpg')}})">
+                <div class="title-mini"><i class="fa-solid fa-stethoscope"></i> Lorem ipsum dolor sit.</div>
+                <button type="submit">More</button>
+            </div>
+            <div class="item" style="background-image: url({{url_for('static', filename='img/index/1.jpg')}})">
+                <div class="title-mini"><i class="fa-solid fa-stethoscope"></i> Lorem ipsum dolor sit.</div>
+                <button type="submit">More</button>
+            </div>
+            <div class="item" style="background-image: url({{url_for('static', filename='img/index/1.jpg')}})">
+                <div class="title-mini"><i class="fa-solid fa-stethoscope"></i> Lorem ipsum dolor sit.</div>
+                <button type="submit">More</button>
+            </div>
+        </div>
+    </div>
+    <div class="coisa"></div>
+</div>
+{% endblock %}

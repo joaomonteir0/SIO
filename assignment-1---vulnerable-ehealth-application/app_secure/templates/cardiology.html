@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/makeAppointment.css')}}">
+<title>eHealth Corp - Cardiology</title>
+{% endblock %}
+{% block body %}
+<div class="wrapper" style="margin-top:145px; display:flex; align-items: center; justify-content: center;flex-direction: column;">
+    <h1>Make an Appointment</h1>
+    <form action="/makeAppointment" method="POST">
+        <label for="name">Patient</label>
+        <input type="text" name="name" placeholder="{{name}}" id="" disabled="disabled">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.date) }}
+        {{ wtf.form_field(form.time) }}
+        {{ wtf.form_field(form.doctor) }}
+        {{ wtf.form_field(form.patient) }}
+        <button type="submit">Finish</button>
+    </form>
+</div>
+{% endblock %}

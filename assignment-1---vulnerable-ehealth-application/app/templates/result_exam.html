@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/tables.css')}}">
+
+<title>eHealth Corp - Consult Exams</title>
+<style>
+    ul{display:none;}
+</style>
+{% endblock %}
+{% block body %}
+<body onload="print()">
+<div class="conteudo" style="width:100%; max-width: 1250px;  margin: 0 auto; margin-top: 150px;">
+    <h3>Exam code: {{ exam.code  | safe }}</h3>
+    <p style="font-size: 18px;">Exam result: {{ exam.content | safe  }}</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi alias id nemo non dolor nulla eligendi optio, quo, ducimus, necessitatibus veniam et. Eos voluptatibus eius tempora animi molestiae modi dolor nulla doloribus a, officiis vitae recusandae dignissimos. Odio, est provident?</p>
+</div>
+{% endblock %}

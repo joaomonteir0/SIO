@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/tables.css')}}">
+
+<title>eHealth Corp - Consult Exams</title>
+{% endblock %}
+{% block body %}
+<h1 style="margin-top:200px;">Download an exam</h1>
+<div class="holder" style="width: 100%; max-width:1250px; margin: 0 auto;">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <h3 class=flashes style="color:rgb(216, 35, 35);">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </h3>
+    {% endif %}
+  {% endwith %}
+    <form action="/exams" method="POST">
+
+        {{ form.hidden_tag() }}
+        <label > Insert the code to get access to your exam</label>
+        <style>
+            input{
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+        </style>
+        {{ wtf.form_field(form.code) | safe }}
+        <button type="submit" style="padding: 10px 20px;margin-top: 10px; background-color: #26c6da;border:none; border-radius: 5px; color: #fff; outline: none; cursor:pointer;">Download</button>
+    </form>
+</div>
+{% endblock %}
